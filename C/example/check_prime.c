@@ -8,8 +8,8 @@ void main()
 	printf("숫자를 입력하시오: ");
 	scanf_s("%d", &num);
 
-	if (num < 0) // 입력되는 숫자가 자연수 이어야합니다.
-		printf("잘못된 입력값 입니다");
+	if (num <= 0) // 입력되는 숫자가 자연수 이어야합니다.
+		printf("잘못된 입력값 입니다\n");
 
 	else
 		check_prime(num); // 자연수일 경우 프로그램을 실행합니다.
