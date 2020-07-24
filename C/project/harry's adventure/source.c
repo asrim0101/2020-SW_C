@@ -97,20 +97,19 @@ int GameTitleA()
 	int i;
 	while (1)
 	{
-		if (_kbhit(NULL))
-		{
-			break;
-		}
-
-		else
+	
 			for (i = 1; i <= 15; i++)
 			{
 				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), i);
 				gotoxy(58, 25);
 				Sleep(300);
 				printf("『  Press any key to start game  』\n");
+				if (_kbhit())
+				break;
 			}
 		
+		if (_kbhit())
+			break;
 	}
 	while (_kbhit()) _getch();
 	return 0;
