@@ -215,3 +215,24 @@ int Harry() //해리 움직이기 (이거 뭔가 나중에 수정해야할 것 �
 	
 
 }
+//////////////////////////////////////////////////////////////////
+void game_over(void) { //게임종료 함수 
+    gotoxy(MAP_X + (MAP_WIDTH / 2) - 6, MAP_Y + 5, "+----------------------+");
+    gotoxy(MAP_X + (MAP_WIDTH / 2) - 6, MAP_Y + 6, "|      GAME OVER..     |");
+    gotoxy(MAP_X + (MAP_WIDTH / 2) - 6, MAP_Y + 7, "+----------------------+");
+    gotoxy(MAP_X + (MAP_WIDTH / 2) - 6, MAP_Y + 8, " YOUR SCORE : ");
+    printf("%d", last_score = score);
+
+    gotoxy(MAP_X + (MAP_WIDTH / 2) - 7, MAP_Y + 12, " Press any keys to restart.. ");
+
+    if (score > best_score) {
+        best_score = score;
+        gotoxy(MAP_X + (MAP_WIDTH / 2) - 4, MAP_Y + 10, "☆ BEST SCORE ☆");
+    }
+    Sleep(500);
+    while (_kbhit()) _getch();
+    key = _getch();
+    title();
+}
+
+//readmap & score 진행중... (맵 완성 후 시도 예정)
